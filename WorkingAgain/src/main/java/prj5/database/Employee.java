@@ -1,9 +1,14 @@
+package prj5.database;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.sql.Date;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class Employee {
     private String ssn;
     private Date dob;

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <style>
+        body {
+            background-color: #F5F5F5;
+            font-family: Arial, sans-serif;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: auto;
+            max-width: 800px;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+            border-right: 1px solid #ddd;
+        }
+
+        td:first-child {
+            border-left: 1px solid #ddd;
+        }
+
+        td:last-child {
+            border-right: 1px solid #ddd;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        button {
+            margin: 10px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #3e8e41;
+            transform: scale(1.05);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<h3><button onclick="window.location.href='/'">Home</button></h3>
+<h1 style="text-align: center;">Dependents</h1><table class = "table">
+<table>
+    <tr>
+        <th>ParentSSN</th>
+        <th>First Name</th>
+        <th>Middle Initial</th>
+        <th>Last Name</th>
+        <th>Relationship</th>
+    </tr>
+    <tr th:each="dependent:${dependents}">
+        <td th:text="${dependent.parentSSN}"></td>
+        <td th:text="${dependent.fName}"></td>
+        <td th:text="${dependent.mInit}"></td>
+        <td th:text="${dependent.lName}"></td>
+        <td th:text="${dependent.relationship}"></td>
+    </tr>
+</table>
+
+</body>
+</html>
